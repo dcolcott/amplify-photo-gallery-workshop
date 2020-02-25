@@ -5,7 +5,7 @@ weight = 20
 +++
 
 
-**➡️ Open the AWS Console**, browse to AppSync, make sure you're in your chosen region and **click into the photoalbums-master API**. Now we can start poking around with the API.
+**➡️ Open the AWS Console**, browse to [AppSync](https://ap-southeast-2.console.aws.amazon.com/appsync/home?region=ap-southeast-2) make sure you're in your chosen region and **click into the photoalbums-master API**. Now we can start poking around with the API.
 
 **➡️ Click Queries** in the sidebar on the left.
 

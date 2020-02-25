@@ -7,7 +7,7 @@ weight = 20
 ### Creating a React app
 We'll get things started by building a new React web app using the **create-react-app** CLI tool. 
 
-{{% notice info %}}
+{{% notice note %}}
 This will give us a sample React app with a local auto-reloading web server and some helpful transpiling support for the browser like letting us use async/await keywords, arrow functions, and more.
 {{% /notice %}}
 
@@ -16,6 +16,10 @@ You can learn more about create-react-app at [https://github.com/facebook/create
 {{% /notice %}}
 
 **➡️ In the Cloud9 terminal, run** `npx create-react-app photoalbums`.
+
+This has created the boilerplate structure for a React web application (called photolbums) in the Cloud9 IDE. You can see and access the folder structure in the Cloud9 directory tree.
+
+![AWS Cloud9 Directory Tree](/images/cloud9-directory-tree.png)
 
 **➡️ Then, navigate to the newly created directory with** `cd photoalbums`.
 
@@ -44,6 +48,9 @@ index aa069f2..fa245c8 100644
      <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 +    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 +
+@@ -88,6 +88,8 @@
+-    <title>React App</title>
++    <title>AWS-Amplify-Fullstack-Workshop</title>
      <!--
        Notice the use of %PUBLIC_URL% in the tags above.
        It will be replaced with the URL of the `public` folder during the build.
@@ -78,7 +85,7 @@ index aa069f2..fa245c8 100644
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>AWS-Amplify-Fullstack-Workshop</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

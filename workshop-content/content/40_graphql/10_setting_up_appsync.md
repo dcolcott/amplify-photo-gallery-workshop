@@ -31,6 +31,9 @@ photoalbums
 ? Choose an authorization type for the API
 Amazon Cognito User Pool
 
+? Do you want to configure advanced settings for the GraphQL API
+No, I am done. 
+
 ? Do you have an annotated GraphQL schema? 
 No
 
@@ -43,9 +46,6 @@ One-to-many relationship (e.g., “Blogs” with “Posts” and “Comments”)
 ? Do you want to edit the schema now? 
 Yes
 
-Please manually edit the file created at /home/ec2-user/environment/photoalbums/amplify/backend/api/photoalbums/schema.graphql
-
-? Press enter to continue 
 ```
 
 

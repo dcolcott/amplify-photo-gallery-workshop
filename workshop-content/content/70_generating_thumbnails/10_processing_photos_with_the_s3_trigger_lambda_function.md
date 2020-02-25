@@ -494,7 +494,7 @@ With these steps done, our Lambda function's code is ready to go, but we'll have
 
 4. **Toggle all of the options on** and press Enter.  (You can press `a` to easily toggle them all on.)
 
-5. **Select no** when asked if yu want to edit the local Lambda function. (We've already updated the code.)
+5. **Select no** when asked if you want to edit the local Lambda function. (We've already updated the code.)
 
 
 Similarly, back when we first configured our AppSync GraphQL API, we configured it to authenticate requests using an Amazon Cognito User Pool so that only the users who authenticated to our web app front end would be able to communicate with the API. Now that we have a server-side Lambda function that will run whenever a new photo gets uploaded to an album, we'll also want that function to be able to communicate with our API. Even though we re-configured our S3 trigger function above, that only took care of specifying that the Lambda function had permissions to communicate with the API via AWS's Identity and Access Management authentication. We still need to configure the API to allow clients to authenticate via IAM as an secondary authentication mechanism. To make this happen, we'll just ask Amplify to re-configure our API to use multiple authentication methods.
@@ -509,7 +509,7 @@ Similarly, back when we first configured our AppSync GraphQL API, we configured 
 
 4. **Select 'Yes'** to configure additional auth types.
 
-5. **Toggle on IAM** and press Enter.
+5. **Toggle on IAM** and press Enter. (**Press Space to Toggle IAM**, don't just select it and press enter.)
 
 6. **Select 'No'** when asked if you want to configure conflict detection.
 

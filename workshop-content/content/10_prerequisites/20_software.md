@@ -27,47 +27,15 @@ These commands will take a few minutes to finish.
 
 ### Configuring a default region 
 
-A best practice is to deploy your infrastructure close to your customers, let's configure a default AWS region for this workshop : Northern Virginia (*us-east-1*) for North America or Ireland (*eu-west-1*) for Europe.
+A best practice is to deploy your infrastructure close to your customers, let's configure (Sydney) ap-southeast-2 as the default AWS region.
 
 **Create an AWS config file**, run:
-
-{{% tabs %}}
-{{% tab "us-east-1" "Virginia" %}}
 ```bash
 cat <<END > ~/.aws/config
 [default]
-region=us-east-1
+region=ap-southeast-2
 END
 ```
-{{% /tab %}}
-
-{{% tab "us-west-2" "Oregon" %}}
-```bash
-cat <<END > ~/.aws/config
-[default]
-region=us-west-2
-END
-```
-{{% /tab %}}
-
-{{% tab "eu-west-1" "Ireland" %}}
-```bash
-cat <<END > ~/.aws/config
-[default]
-region=eu-west-1
-END
-```
-{{% /tab %}}
-
-{{% tab  "ap-southeast-1"  "Singapore" %}}
-```bash
-cat <<END > ~/.aws/config
-[default]
-region=ap-southeast-1
-END
-```
-{{% /tab %}}
-{{% /tabs %}}
 
 {{% notice info %}}
 The AWS Amplify CLI is a toolchain which includes a robust feature set for simplifying mobile and web application development. The step above took care of installing it, but we also need to configure it. It needs to know what region to work with, and it determines this by looking for the *~/.aws/config* file. Cloud9 takes care of making sure we have valid Administrator credentials in the *~/.aws/credentials* file, but it doesn't create *~/.aws/config* for us.

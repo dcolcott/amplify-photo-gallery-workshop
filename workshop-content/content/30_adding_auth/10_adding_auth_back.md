@@ -31,15 +31,29 @@ Here's what the sign-in screen will look like:
 
 1. **Accept the default values** for paths and build commands
 
-1. **Select the default profile** when prompted
+1. **Do you want to use an AWS profile?** Yes
+
+1. **Select the [default] profile** when prompted
 
 ![amplify init](/images/amplify_init.png)
 
-{{% notice info %}}
-This will create a new local configuration for us which we can use to set up an [Amazon Cognito](https://aws.amazon.com/cognito/) User Pool to act as the backend for letting users sign up and sign in. (More about Amazon Cognito and what a User Pool is below.) If you want to read more about this step, take a look at the 'Installation and Configuration' steps from the [AWS Amplify Authentication guide](https://aws-amplify.github.io/amplify-js/media/authentication_guide.html).
+### AWS Amplify Deployment
+
+AWS Amplify makes it quick and easy to deploy sophisticated application stacks into AWS. So much so you can easily deploy a scalable, secure application without ever having to open the AWS console. However, throughout this workshop we encourage you to visit the console and see what AWS Amplify configured.
+
+AWS Amplify manages the environment via AWS CloudFormation. Aiding in managability, each resource deployed (e.g: API, Auth, Storage, etc) is supported by a nested CloudFormation stack. In the last step with the ***'amplify init'***  command, the root stack was deployed which initialises the environment with the required IAM roles and S3 storage for AWS Amplify configuration files.
+
+Open the AWS CloudFormation console and view how AWS Amplify initialised the project at: [AWS CloudFormation](https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-southeast-2)
+
+![AWS Amplify Init Resources](/images/amplify-init-cf-resources.png)
+
+{{% notice tip %}}
+We won't stop to remind you at every step but highly encourage you to look at the AWS CloudFormation templates and the resources deployed after every AWS Amplify configuration command to familiarize yourself with the core functionality. 
 {{% /notice %}}
 
 ### Adding authentication
+
+The below will create a new local configuration for us which we can use to set up an [Amazon Cognito](https://aws.amazon.com/cognito/) User Pool to act as the backend for letting users sign up and sign in. (More about Amazon Cognito and what a User Pool is below.) If you want to read more about this step, take a look at the 'Installation and Configuration' steps from the [AWS Amplify Authentication guide](https://aws-amplify.github.io/amplify-js/media/authentication_guide.html).
 
 1. **➡️ Run** `amplify add auth` to add authentication to the app
 
@@ -48,6 +62,8 @@ This will create a new local configuration for us which we can use to set up an 
 1. **➡️ Select Username** when asked how you want users to sign in
    
 1. **➡️ Select "No, I am done."** when asked about advanced settings.
+
+2. **➡️ Run** `amplify status` to verify the changes Amplify will push to the cloud.
 
 2. **➡️ Run** `amplify push` to create these changes in the cloud
 
@@ -59,7 +75,10 @@ This will create a new local configuration for us which we can use to set up an 
 The Amplify CLI will take care of provisioning the appropriate cloud resources and it will update src/aws-exports.js with all of the configuration data we need to be able to use the cloud resources in our app.
 {{% /notice %}}
 
-Congratulations! You've just created a serverless backend for user registration and authorization capable of scaling to millions of users with Amazon Cognito. 
+**Congratulations! You've just created a serverless backend for user registration and authorization** capable of scaling to millions of users with Amazon Cognito. 
+
+### Verify AWS Amplify Resources: Amazon Cognito User-Pool
+That one simple command **'amplify auth'** configured an Amazon Cognito User-Pool that is ready to protect access to the application and the API. Take a minute to view the nested AWS Cloud Formation stack used to manage the auth function at: [AWS CloudFormation](https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-southeast-2) and the Amazon Cognito User-Pool deployed at: [Amazon Cognito](https://ap-southeast-2.console.aws.amazon.com/cognito/users/?region=ap-southeast-2)
 
 {{% notice tip %}}
 Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. We just made a User Pool, which is a secure user directory that will let our users sign in with the username and password pair they create during registration. Amazon Cognito (and the Amplify CLI) also supports configuring sign-in with social identity providers, such as Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0. If you'd like to learn more, we have a lot more information on the [Amazon Cognito Developer Resources page](https://aws.amazon.com/cognito/dev-resources/) as well as the [AWS Amplify Authentication documentation.](https://aws-amplify.github.io/amplify-js/media/authentication_guide#federated-identities-social-sign-in)

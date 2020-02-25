@@ -524,10 +524,11 @@ export default withAuthenticator(App, {
 
 ### Try uploading a photo in an album
 
-At this point there's not much to look at, but you should be able to click the button, select a file, and see it change to *'Uploading…'* before switching back to an upload button again. 
+At this point there's not much to look at, but you should be able to click the **Album Title** in the application browser, select a file, and see it change to *'Uploading…'* before switching back to an upload button again. 
 
 {{% notice tip %}}
-You can also go manually explore the S3 bucket in the AWS web console to see that the files are getting uploaded. The easiest way to find the bucket name is to look at _src/aws-exports.js_ and find the value configured for __aws_user_files_s3_bucket__. Find your bucket in the S3 web console, then look in the bucket under _public/uploads_.
+You can also go manually explore the S3 bucket in the AWS web console to see that the files are getting uploaded. The easiest way to find the bucket name is to look at _src/aws-exports.js_ and find the value configured for __aws_user_files_s3_bucket__. Find your bucket in the S3 web console, then look in the bucket under private/region[uuid]/upload/[uuid]
+
 {{% /notice %}}
  
 {{% notice info %}}

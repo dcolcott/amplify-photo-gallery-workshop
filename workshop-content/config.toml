@@ -10,7 +10,6 @@ pygmentsCodeFences = true
 #pygmentsCodeFencesGuessSyntax = true
 #pygmentsStyle = "monokai"
 
-
 [blackfriday]
 hrefTargetBlank = true
 
@@ -38,9 +37,9 @@ disableShortcutsTitle=true
 #     weight = -110
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-twitter fa-lg'></i> @gabehollombe"
+name = "<i class='fab fa-linkedin fa-lg'></i> dean.colcott"
 identifier = "tw"
-url = "https://twitter.com/intent/user?screen_name=gabehollombe"
+url = "https://www.linkedin.com/in/deancolcott/"
 weight = 1
 
 [outputs]

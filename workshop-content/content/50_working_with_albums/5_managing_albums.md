@@ -431,7 +431,7 @@ What makes a lot of this really convenient is that Amplify took care of generati
 The *listAlbums* query we're above using passes in a very high limit argument. This is because we can just load all of the albums in one request and sort the albums alphabetically on the client-side (instead of dealing with paginated DynamoDB responses). This keeps the *AlbumsList* code pretty simple, so it's probably worth the trade off in terms of performance or network cost.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Also worth noting is how we're leveraging an AppSync real-time subscription to automatically refresh the list of albums whenever a new album is created.
 <br/>
 <br/>
@@ -439,4 +439,9 @@ Our GraphQL schema contains a *Subscription* type with a bunch of subscriptions 
 <br/>
 <br/>
 The content for the subscription property looks very similar to what we provided for the query property previously; it just contains a query specifying the subscription we want to listen to and what fields we'd like back when new data arrives. The only slightly tricky bit is that we also need to define a handler function to react to new data from the subscription, which is what we use to refresh our _AlbumsList_ component with new data from the backend. This is what we've done above.
+
 {{% /notice %}}
+
+#### Test out the Subscription Functionality
+1. Copy the URL of the application hosted in Cloud9 and open in a second browser tab.  
+1. In the second tab, add additional albums and see the change automatically triggering a update on the first tab.
